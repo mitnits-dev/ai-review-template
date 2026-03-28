@@ -29,3 +29,15 @@ On each pull request open/update, GitHub Actions:
 - This starter posts a PR comment; it does not auto-approve or auto-request-changes yet.
 - You can customize `REVIEW.md` per project.
 - You can extend the workflow later to add stricter gating or line comments.
+
+## Author-side follow-up with Claude CLI
+
+After the AI reviewer comments on a PR, you can ask local Claude CLI to address the feedback:
+
+```bash
+./scripts/address-pr-review.sh <pr-number>
+```
+
+The script fetches PR comments and reviews from GitHub, builds a focused prompt, and runs `claude -p ...` in the repo.
+
+You can pass extra Claude CLI arguments after the PR number if needed.
