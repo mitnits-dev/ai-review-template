@@ -6,6 +6,7 @@ Starter template for new coding projects with an AI pull request reviewer alread
 
 - GitHub Actions workflow for PR review: `.github/workflows/ai-review.yml`
 - Review rubric: `REVIEW.md`
+- Claude Code guidance for handling PR feedback: `CLAUDE.md`
 
 ## What you must do after creating a repo from this template
 
@@ -28,6 +29,7 @@ On each pull request open/update, GitHub Actions:
 
 - This starter posts a PR comment; it does not auto-approve or auto-request-changes yet.
 - You can customize `REVIEW.md` per project.
+- `CLAUDE.md` tells Claude Code how to fetch and address PR review feedback using the reusable `gh-address-pr-review` helper.
 - You can extend the workflow later to add stricter gating or line comments.
 
 ## Author-side follow-up with Claude CLI
