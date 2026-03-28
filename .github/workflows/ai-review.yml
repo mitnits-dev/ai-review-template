@@ -123,9 +123,10 @@ jobs:
           with open('review_prompt.txt', 'r', encoding='utf-8') as f:
               prompt = f.read()
 
+          model = os.environ.get('GEMINI_MODEL', 'gemini-1.5-flash')
           url = (
               'https://generativelanguage.googleapis.com/v1beta/models/'
-              'gemini-2.0-flash:generateContent'
+              f'{model}:generateContent'
           )
           response = requests.post(
               url,
@@ -146,7 +147,11 @@ jobs:
               },
               timeout=120,
           )
-          response.raise_for_status()
+          if not response.ok:
+              print('Gemini API error:')
+              print(response.status_code)
+              print(response.text)
+              response.raise_for_status()
           data = response.json()
           text = data['candidates'][0]['content']['parts'][0]['text']
 
