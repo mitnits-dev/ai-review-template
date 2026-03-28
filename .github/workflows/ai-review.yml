@@ -76,31 +76,31 @@ jobs:
               return ''
 
           prompt = f"""
-You are a strict AI code reviewer.
+          You are a strict AI code reviewer.
 
-Review the pull request using the repository context and the changed-file patches.
-Focus on real, actionable issues only.
+          Review the pull request using the repository context and the changed-file patches.
+          Focus on real, actionable issues only.
 
-Repository file list:
-{repo_tree}
+          Repository file list:
+          {repo_tree}
 
-Repository guidance files:
+          Repository guidance files:
 
-[REVIEW.md]
-{read_if_exists('REVIEW.md')}
+          [REVIEW.md]
+          {read_if_exists('REVIEW.md')}
 
-[CLAUDE.md]
-{read_if_exists('CLAUDE.md')}
+          [CLAUDE.md]
+          {read_if_exists('CLAUDE.md')}
 
-[docs/REQUIREMENTS.md]
-{read_if_exists('docs/REQUIREMENTS.md')}
+          [docs/REQUIREMENTS.md]
+          {read_if_exists('docs/REQUIREMENTS.md')}
 
-[docs/SPECIFICATIONS.md]
-{read_if_exists('docs/SPECIFICATIONS.md')}
+          [docs/SPECIFICATIONS.md]
+          {read_if_exists('docs/SPECIFICATIONS.md')}
 
-Changed files JSON:
-{json.dumps(summary, ensure_ascii=False, indent=2)}
-""".strip()
+          Changed files JSON:
+          {json.dumps(summary, ensure_ascii=False, indent=2)}
+          """.strip()
 
           with open('review_prompt.txt', 'w', encoding='utf-8') as f:
               f.write(prompt)
