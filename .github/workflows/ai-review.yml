@@ -142,7 +142,7 @@ jobs:
                   ],
                   'generationConfig': {
                       'temperature': 0.2,
-                      'maxOutputTokens': 1800,
+                      'maxOutputTokens': 2600,
                   },
               },
               timeout=120,

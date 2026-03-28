@@ -23,6 +23,10 @@ Focus on high-signal review, not praise.
 - Prefer a short list of real issues over many weak suggestions.
 - If nothing important is wrong, say that clearly.
 - Do not invent problems without evidence in the diff or repo context.
+- Return at most 3 findings.
+- Keep the whole review under roughly 400 words.
+- Do not restate the entire PR or give long praise sections.
+- Prefer only high-confidence issues.
 
 ## Output format
 
