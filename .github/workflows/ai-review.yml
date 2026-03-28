@@ -123,7 +123,7 @@ jobs:
           with open('review_prompt.txt', 'r', encoding='utf-8') as f:
               prompt = f.read()
 
-          model = os.environ.get('GEMINI_MODEL', 'gemini-1.5-flash')
+          model = os.environ.get('GEMINI_MODEL', 'gemini-2.5-flash')
           url = (
               'https://generativelanguage.googleapis.com/v1beta/models/'
               f'{model}:generateContent'
